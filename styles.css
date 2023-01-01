@@ -1,0 +1,81 @@
+:root {
+	--bgBlack: #1F1E1F;
+	--bgGray: #3A393A;
+	--darkGray: #4C4C4C;
+	--lightGray: #7A797A;
+}
+
+/* Body reset */
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+
+	background: var(--bgBlack);
+	color: white;
+	font-family: sans-serif;
+}
+
+#nav {
+	display: flex;
+
+	background: var(--bgGray);
+}
+#nav > span {
+	margin: 3px;
+
+	background: var(--darkGray);
+	border-radius: 2.5px;
+	font-size: 10pt;
+	text-align: center;
+
+	flex-grow: 1;
+}
+#nav > span.selected {
+	background: var(--bgBlack);
+}
+#nav > span:hover {
+	background: var(--lightGray);
+}
+#nav > span:active {
+	background: var(--bgBlack);
+}
+#nav > span:not(:last-child) {
+	margin-right: 0;
+}
+
+#container {
+	background: var(--bgBlack);
+}
+#container > div {
+	display: flex;
+}
+#container > div > span {
+	padding: 3px;
+
+	border: 1px solid #585758;
+}
+#container > div > span:last-child {
+	flex-grow: 1;
+}
+#container > div:first-child > span { border-top: none; }
+/* #container > div:last-child > span { border-bottom: none; } */
+#container > div > span:first-child { border-left: none; }
+#container > div > span:last-child { border-right: none; }
+
+#editButton {
+	border-radius: 2.5px;
+	bottom: 20px;
+	padding: 10px 20px;
+	position: absolute;
+	right: 20px;
+
+	background: var(--lightGray);
+}
+#editButton:hover {
+	background: var(--darkGray);
+}
+#editButton:active {
+	background: var(--bgGray);
+}
