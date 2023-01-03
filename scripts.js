@@ -49,3 +49,24 @@ function showShortcuts(id, e) {
 	}
 }
 showShortcuts(Object.keys(shortcuts)[0]);
+
+// Menu toggle
+const menu = new (
+	class {
+		editButton = document.getElementById('editButton');
+
+		constructor() {
+			this.registerHandlers();
+		}
+
+		registerHandlers() {
+			this.editButton.addEventListener('click', this.openHandler);
+		}
+
+		openHandler(e) {
+			console.log(e);
+		}
+	}
+)();
+
+console.log(menu, menu.constructor);
