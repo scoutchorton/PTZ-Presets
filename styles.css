@@ -64,18 +64,45 @@ html, body {
 #container > div > span:first-child { border-left: none; }
 #container > div > span:last-child { border-right: none; }
 
-#editButton {
+.btn {
 	border-radius: 2.5px;
-	bottom: 20px;
-	padding: 10px 20px;
-	position: absolute;
-	right: 20px;
 
 	background: var(--lightGray);
 }
-#editButton:hover {
+.btn.btn-lg {
+	padding: 10px 20px;
+}
+.btn:hover {
 	background: var(--darkGray);
 }
-#editButton:active {
+.btn:active {
 	background: var(--bgGray);
+}
+
+#editButton {
+	bottom: 20px;
+	position: absolute;
+	right: 20px;
+}
+
+#editMenu {
+	display: flex;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+
+	background: var(--bgGray);
+
+	flex-direction: column;
+}
+#editMenu.hidden {
+	display: none;
+}
+#editMenu #bottomToolbar {
+	display: flex;
+	margin-bottom: 20px;
+
+	justify-content: space-around;
 }

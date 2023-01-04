@@ -53,20 +53,29 @@ showShortcuts(Object.keys(shortcuts)[0]);
 // Menu toggle
 const menu = new (
 	class {
-		editButton = document.getElementById('editButton');
 
 		constructor() {
+			this.editButton = document.getElementById('editButton');
+			this.editMenu = document.getElementById('editMenu');
+
 			this.registerHandlers();
 		}
 
 		registerHandlers() {
-			this.editButton.addEventListener('click', this.openHandler);
+			this.editButton.addEventListener('click', this.openHandler.bind(this));
+			this.editMenu.querySelector('#bottomToolbar *:nth-child(1)').addEventListener('click', this.saveHandler.bind(this));
+			this.editMenu.querySelector('#bottomToolbar *:nth-child(2)').addEventListener('click', this.closeHandler.bind(this));
 		}
 
 		openHandler(e) {
-			console.log(e);
+			this.editMenu.classList.remove('hidden');
+		}
+		closeHandler(e) {
+			this.editMenu.classList.add('hidden');
+		}
+		saveHandler(e) {
+			/** @todo implement saving */
+			this.closeHandler(e);
 		}
 	}
 )();
-
-console.log(menu, menu.constructor);
